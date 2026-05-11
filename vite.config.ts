@@ -15,19 +15,13 @@ export default defineConfig(({ mode }) => {
 
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, 'src')
-      }
-    },
-
-    server: {
-      host: true,
-      port: 3000,
-      strictPort: true
+        '@': path.resolve(__dirname, 'src'),
+      },
     },
 
     build: {
       outDir: 'dist',
-      sourcemap: false
-    }
+      sourcemap: false,
+    },
   }
 })
