@@ -4,7 +4,7 @@ import path from 'path'
 import { defineConfig, loadEnv } from 'vite'
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, '.', '')
+  const env = loadEnv(mode, process.cwd(), '')
 
   return {
     plugins: [react(), tailwindcss()],
@@ -15,15 +15,19 @@ export default defineConfig(({ mode }) => {
 
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
-      },
+        '@': path.resolve(__dirname, 'src')
+      }
     },
 
     server: {
-      host: true,        // ⚡ cho phép truy cập từ iPhone
-      port: 3000,        // port bạn đang dùng
-      strictPort: true,  // tránh tự đổi port
-      hmr: process.env.DISABLE_HMR !== 'true',
+      host: true,
+      port: 3000,
+      strictPort: true
     },
+
+    build: {
+      outDir: 'dist',
+      sourcemap: false
+    }
   }
 })
