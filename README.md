@@ -18,3 +18,4 @@ View your app in AI Studio: https://ai.studio/apps/a76dbfcd-b32b-4d05-bca7-e1aa6
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+# fpt.edu.fap.vn.com
